@@ -1,12 +1,8 @@
 body {
   background-color: #101414;
-  color: #c9d1d9;
+  color: #fff;
 }
 
 a {
-  color: #58a6ff;
-}
-
-img {
-  filter: invert(1);
+  color: #79b8ff;
 }
