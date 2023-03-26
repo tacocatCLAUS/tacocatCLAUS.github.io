@@ -1,0 +1,12 @@
+body {
+  background-color: #101414;
+  color: #c9d1d9;
+}
+
+a {
+  color: #58a6ff;
+}
+
+img {
+  filter: invert(1);
+}
