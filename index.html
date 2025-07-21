@@ -1,63 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>CLAUS Homepage</title>
-	<style>
-		body {
-			background-image: url('https://user-images.githubusercontent.com/116687416/227782657-05170c34-0386-4d8d-b6c5-57460f5f2fab.png');
-			background-size: cover;
-			background-position: center 20%;
-			background-repeat: no-repeat;
-			font-family: Arial, sans-serif;
-			text-align: center;
-			color: white;
-			opacity: 0;
-			animation: fade-in 2s forwards;
-		}
+  <meta charset="UTF-8" />
+  <title>my portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Before anything renders, decide what to load
+    document.addEventListener("DOMContentLoaded", function () {
+      const isMobile = window.innerWidth <= 768; // basic mobile detection
 
-		h1 {
-			font-size: 5em;
-			margin-top: 40vh;
-			letter-spacing: 0.2em;
-		}
-
-		nav {
-			margin-top: 20px;
-			display: inline-block;
-		}
-
-		nav ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		nav li {
-			display: inline-block;
-			margin-right: 20px;
-		}
-
-		nav a {
-			color: white;
-			text-decoration: none;
-			font-size: 1.5em;
-			font-weight: bold;
-		}
-
-		@keyframes fade-in {
-			from { opacity: 0; }
-			to { opacity: 1; }
-		}
-	</style>
+      // Create a script tag to inject the correct content
+      const file = isMobile ? "grey.html" : "picker.html";
+      fetch(file)
+        .then(res => res.text())
+        .then(html => {
+          document.open();
+          document.write(html);
+          document.close();
+        })
+        .catch(err => {
+          document.body.innerHTML = "<h1>Failed to load content.</h1>";
+          console.error("Error loading content:", err);
+        });
+    });
+  </script>
 </head>
-<body>
-	<h1>CLAUS</h1>
-	<nav>
-		<ul>
-			<li><a href="welcome.html">Welcome</a></li>
-			<li><a href="aboutme.html">About Me</a></li>
-			<li><a href="links.html">Links</a></li>
-		</ul>
-	</nav>
+<body style="background: #111; color: #ccc; font-family: sans-serif;">
+  <noscript>Please enable JavaScript to load the appropriate layout.</noscript>
 </body>
 </html>
